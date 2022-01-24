@@ -71,10 +71,82 @@ console.log(extraction);
 let replacement = extraction.replace("o", "e")
 console.log(replacement);
 
-// NO TOUCHING! (please)
 const die1 = Math.floor(Math.random() * 6) + 1; //random number from 1-6
 const die2 = Math.floor(Math.random() * 6) + 1; //random number from 1-6
 
-// YOUR CODE BELOW THIS LINE:
 const roll = `die1: ${die1} \ndie2: ${die2} \nYou rolled a ${die1} and a ${die2}. They sum to ${die1 + die2}`
 console.log(roll);
+
+// Comparison Operators
+
+/* Greater Than  */
+console.log(`5 > 5: ${5 > 5}`);
+console.log(`5 > 3: ${5 > 3}`);
+console.log(`'aa' > 'ab': ${'aa' > 'ab'}`);
+
+/* Less Than */
+console.log(`5 < 3: ${5 < 3}`);
+console.log(`5 < 10: ${5 < 10}`);
+console.log(`'aa' < 'ac': ${'aa' < 'ac'}`);
+
+/* Greater than/Less than or equal to  */
+console.log(`5 >= 5: ${5 >= 5}`);
+console.log(`4 <= 4: ${5 <= 5}`);
+console.log(`1 >= 5: ${1 >= 5}`);
+console.log(`5 <= 10: ${5 <= 10}`);
+
+
+/* Equality Operators */
+
+/* Equality operators */
+console.log(`1 == 1: ${1 == 1}`);
+console.log(`'1' == 1: ${'1' == 1}`);
+console.log(`0 == false: ${0 == false}`);
+console.log(`'hello' == 'hello': ${'hello' == 'hello'}`);
+
+/* Strict equality */
+console.log(`1===1: ${1 === 1}`);
+console.log(`'10' === 10 ${'10' === 10}`);
+console.log(`0 === false: ${0 === false}`);
+
+/* Inequality */
+console.log(`1 != 1: ${1 != 1}`);
+console.log(`1 != '1: ${1 != `1`}`);
+console.log(`0 != false: ${0 != false}`);
+
+/* Strict inequality */
+console.log(`1 !== '1' ${1 !== '1'}`);
+console.log(`1 !== 1: ${1 !== 1}`);
+console.log(`0 != false: ${0 !== false}`);
+
+
+/* Conditionals */
+let num = Math.floor(Math.random() * 10 ) + 1;
+
+if (num % 2 === 0){
+    console.log(`The number generated is ${num} and it is even.`)
+} else {
+    console.log(`The number generated is ${num} and it is odd.`)
+}
+
+/* No confundir los valores primitives true y false con los
+valores true y false del objeto Boolean */
+
+let primitiveValue = true;
+let booleanObject = new Boolean(true);
+
+if (booleanObject){
+    console.log(`Having the object adds a level of indirection. Value of the object: ${booleanObject}`);
+}
+
+let weekendDay = "Saturday";
+
+if ( weekendDay === "Friday"){
+    console.log(`The weekend is just begging. Have fun and disconnect!`);
+} else if (weekendDay === "Saturday"){
+    console.log(`Have fun, but with moderation and responsability`);
+} else if (weekendDay === "Sunday"){
+    console.log(`Its time to rest,recharge energies and prepare to a new week.`);
+} else {
+    console.log(`Keep grinding, dont even think about the weekend.`)
+}
