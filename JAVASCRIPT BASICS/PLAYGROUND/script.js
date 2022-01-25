@@ -96,7 +96,7 @@ console.log(`1 >= 5: ${1 >= 5}`);
 console.log(`5 <= 10: ${5 <= 10}`);
 
 
-/* Equality Operators */
+/* EQUALITI OPERATORS */
 
 /* Equality operators */
 console.log(`1 == 1: ${1 == 1}`);
@@ -120,7 +120,7 @@ console.log(`1 !== 1: ${1 !== 1}`);
 console.log(`0 != false: ${0 !== false}`);
 
 
-/* Conditionals */
+/* CONDITIONALS */
 let num = Math.floor(Math.random() * 10 ) + 1;
 
 if (num % 2 === 0){
@@ -130,7 +130,7 @@ if (num % 2 === 0){
 }
 
 /* No confundir los valores primitives true y false con los
-valores true y false del objeto Boolean */
+valores true y false de la propiedad del objeto Boolean */
 
 let primitiveValue = true;
 let booleanObject = new Boolean(true);
@@ -150,3 +150,78 @@ if ( weekendDay === "Friday"){
 } else {
     console.log(`Keep grinding, dont even think about the weekend.`)
 }
+
+/* LOGICAL OPERATORS */
+
+/* Logical AND (&&) */
+let a = 10;
+let b = 5;
+
+console.log(a >= 10 && b < 5);
+
+
+/* Logical OR (||) */
+let aa = 3;
+let bb = -2;
+
+console.log(a > 0 || b >0);
+
+/* Logical NOT(!) */
+let expr1 = 200;
+let expr2 = -100;
+
+console.log( !(a > 0 || b > 0));
+
+/* Switch */
+
+let switchExpr = 'Apple';
+
+switch (switchExpr){
+    case 'Mango':
+        console.log('Mangos cost 1€/KG.');
+        break;
+    case 'Papaya':
+    case 'Pineapple':
+            console.log('Papayas and Pineaple costs 2€/KG')
+            break;
+    default:
+        console.log("This fruit is not available;");
+}
+
+/* ARRAYS */
+
+let disciplines = ['Mathematics','Drawing','Music'];
+
+console.log(disciplines.length, disciplines[1][0]);
+
+
+/* Array Methods */
+
+/* push() */
+
+const food = ["Spaguetti", "Salad", "Icecream","Sausage"];
+
+const count = food.push("Rice");
+console.log(count);
+console.log(food);
+food.push("Hamburguer","Pizza","Kebab");
+console.log(food);
+
+/* pop() */
+const plants = ["brocolli", "cauliflower","cabbage","kale","tomato"];
+
+console.log(plants.pop());
+console.log(plants);
+
+/* shift */
+
+const arr = [1,2,3];
+console.log(arr);
+const shiftedElement = arr.shift();
+console.log(`Shifted element: ${shiftedElement} Array: `,arr);
+
+/* unshift */
+const philosophers = ["Kant","Nietzsche","Foucault"];
+console.log(philosophers);
+const unshiftElement = philosophers.unshift("Aristóteles");
+console.log(`Array length: ${unshiftElement} Array:`, philosophers)
