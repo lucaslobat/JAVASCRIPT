@@ -121,6 +121,43 @@ console.log(`0 != false: ${0 !== false}`);
 
 
 /* CONDITIONALS */
+
+let greaterNumber;
+let numberA;
+let numberB;
+
+function greaterNum (numA,numB){
+    numberA = numA;
+    numberB = numB;
+     if(numA > numB){
+        return greaterNumber = numA;
+    } else {
+        return greaterNumber = numB;
+    }
+    
+}
+greaterNum(199,200);
+console.log(`You introduced ${numberA} and ${numberB}. The greater is ${greaterNumber}`);
+
+let languageCode = "";
+
+function worldTranslator (langCode){
+
+    let spanish = "Hola mundo";
+    let english = "Hello World";
+    let finnish = "Hei maailma"
+
+    if(langCode === 'es'){
+        return spanish;
+    } else if (langCode === 'fi'){
+        return finnish;
+    } else {
+        return english;
+    }
+}
+
+console.log(worldTranslator(languageCode));
+
 let num = Math.floor(Math.random() * 10 ) + 1;
 
 if (num % 2 === 0){
@@ -225,3 +262,43 @@ const philosophers = ["Kant","Nietzsche","Foucault"];
 console.log(philosophers);
 const unshiftElement = philosophers.unshift("Aristóteles");
 console.log(`Array length: ${unshiftElement} Array:`, philosophers)
+
+
+/* concat */
+
+const stringArray = ["obj1","obj2","obj3"];
+const stringArray2 = ["obj4","obj5","obj6"];
+
+let concatArrays = stringArray2.concat(stringArray);
+console.log(concatArrays);
+
+/* includes */
+
+console.log(`Does stringArray includes "1"? : ${stringArray.includes("1")} \nDoes stringArray includes "obj2"? : ${stringArray.includes("obj2")}`);
+
+/* indexOf */
+
+console.log(`Whats the index of "obj3"? : ${stringArray.indexOf("obj3")}`);
+
+/* reverse (destructive method) */
+
+let stringArrayClone = stringArray.concat();
+let stringArrayReverse = stringArrayClone.reverse();
+console.log(stringArrayReverse,stringArray);
+
+/* slice */
+
+let games = ['The Lasf of Us','God of War', 'Bloodborne','Sekiro','Elden Ring'];
+
+console.log(`Slice range 1 to 4 : ${games.slice(1,4)}\nSlice start -2: ${games.slice(-2)}`);
+
+/* splice */
+
+let weekDays = ['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'];
+
+console.log(weekDays.splice(2,1),weekDays.splice(3,2),weekDays);
+
+
+weekDays.splice(2,0,"Miércoles");
+weekDays.splice(4,0, "Viernes","Sábado")
+console.log(weekDays);
