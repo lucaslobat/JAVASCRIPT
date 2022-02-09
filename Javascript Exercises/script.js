@@ -28,7 +28,8 @@ const countries = [
   const mernStack = ['MongoDB', 'Express', 'React', 'Node']
 
 
-/* 1. Given the arrays,iterate 0 to 10 using for loop, do the same using while and do while loop */
+/* ######## 1. Given the arrays,iterate 0 to 10 using for loop,
+do the same using while and do while loop ########*/
 
 console.log(`1. Given the arrays,iterate 0 to 10 using for loop, do the same using while and do while loop. \n-----------------Using for loop----------------`);
 
@@ -44,7 +45,8 @@ while (iteration <= 10){
     iteration++;
 }
 
-/* 2. Iterate 10 to 0 using for loop, do the same using while and do while loop */
+/* ######## 2. Iterate 10 to 0 using for loop, 
+do the same using while and do while loop ########*/
 
 console.log(`2. Given the arrays,iterate 10 to 0 using for loop, do the same using while and do while loop. \n-----------------Using for loop----------------`);
 
@@ -60,14 +62,14 @@ while (iterationTwo >= 0){
     iterationTwo--;
 }
 
-/* 3. Iterate 0 to n using for loop */
+/* 3. ######## Iterate 0 to n using for loop ######## */
 console.log(`3. Iterate 0 to n using for loop`)
 
 for (let i = 0; i < webTechs.length; i++){
     console.log(webTechs[i]);
 }
 
-/* 4. Write a loop that makes the following pattern using console.log() */
+/* 4. ######## Write a loop that makes the following pattern using console.log() ######## */
 console.log(`4. Write a loop that makes the following pattern using console.log():
 #
 ##
@@ -83,14 +85,14 @@ for (let i = 1; i <= 7; i++){
     character += "#";
 }
 
-/* 5.Use loop to print the following pattern: */
+/* ######## 5. Use loop to print the following pattern: ########*/
 console.log("5.Use loop to print the following pattern: 0x0 = 0, 1x1 = 1, 2x2 = 4, etc...")
 
 for (let i = 0; i <= 10; i++){
     console.log(`${i} x ${i} = ${i * i}`)
 }
 
-/* 6. Using loop print the following pattern */
+/* ######## 6. Using loop print the following pattern ########*/
 console.log("5.Use loop to print the following pattern:");
 
 console.log(`i   i^2   i^3`);
@@ -98,7 +100,7 @@ for(let i = 0; i <= 10; i++){
     console.log(`${i}   ${i**2}   ${i**3}`)
 }
 
-/* 7. Use for loop to iterate from 0 to 100 and print only even numbers */
+/* ######## 7. Use for loop to iterate from 0 to 100 and print only even numbers ######## */
 console.log("7. Use for loop to iterate from 0 to 100 and print only even numbers")
 
 for (let i = 0; i <= 100; i++){
@@ -107,35 +109,35 @@ for (let i = 0; i <= 100; i++){
     }
 }
 
-/* 8. Use for loop to iterate from 0 to 100 and print only odd numbers */
+/* ######## 8. Use for loop to iterate from 0 to 100 and print only odd numbers ########*/
 
 console.log("8. Use for loop to iterate from 0 to 100 and print only odd numbers");
 
 for (let i = 0; i <= 100; i++){
-    if (i % 2 !== 0 || i == 0){
+    if (i % 2 !== 0 ){
         console.log(i);
     }
 }
 
-/* 9. Use for loop to iterate from 0 to 100 and print only prime numbers */
+/* ######## 9. Use for loop to iterate from 0 to 100 and print only prime numbers ########*/
 console.log("9. Use for loop to iterate from 0 to 100 and print only prime numbers");
 
 
 
 let divisor;
 /* Empezamos iterando en un bucle para verificar si un numero es primo.
-Al iniciar el bucle inicializamos la variable iteracion a 2 (excluyendo el 1 porque es obvio que un numero es 
-divisible entre 1) */
+Al iniciar el bucle inicializamos la variable divisor a 2 
+(excluyendo el 1 porque es obvio que un numero es divisible entre 1) */
 for (let numero = 0; numero <=100; numero++ ){
     
     divisor = 2;
     /* Mientras el divisor sea menor que el numero, verificaremos si el numero es divisible entre el
-    divisor, en caso de que lo sea acabaremos el bucle */
-    for(;divisor < numero;divisor++){
-        if(numero % divisor == 0){
+    divisor, en caso de que lo sea acabaremos el bucle (el numero no es primo) 
+    Se incrementa el divisor en cada iteración del bucle, al final de la ultima iteración, se le sigue sumando 1 al divisor*/
+    for(;divisor < numero; divisor++){
+        if(numero % divisor === 0){
             break;
         }
-        
     }
 
     /* Si el programa ha llegado hasta este punto es porque la variable divisor se ha incrementado
@@ -146,3 +148,99 @@ for (let numero = 0; numero <=100; numero++ ){
     }
 
 }
+
+/*######## 10. Use for loop to iterate from 0 to 100 and print the sum of all numbers. ########*/
+
+
+console.log("10. Use for loop to iterate from 0 to 100 and print the sum of all numbers.");
+let sum = 0;
+
+for (let i = 0; i <= 100; i++){
+    sum += i;
+}
+
+console.log(sum);
+
+/* ########  11. Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds. ########  */
+
+console.log("11. Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds.");
+let evenNumbers = 0;
+let oddNumbers = 0;
+for(let i = 0; i <= 100; i++){
+    if(i % 2 === 0){
+        evenNumbers += i;
+    } else {
+        oddNumbers += i;
+    }
+}
+
+console.log(`Even numbers sum : ${evenNumbers}`);
+console.log(`Odd numbers sum :  ${oddNumbers}`);
+
+
+/* ######## 12. Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds. Print sum of evens and sum of odds as array ######## */
+
+console.log("12. Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds. Print sum of evens and sum of odds as array")
+const oddAndEvenNumbers = [0,0];
+
+for (let i = 0; i <= 100; i++){
+    if(i % 2 === 0){
+        oddAndEvenNumbers[0] += i;
+    } else {
+        oddAndEvenNumbers[1] += i;
+    }
+}
+
+console.log(oddAndEvenNumbers);
+
+/* ######## 13.Develop a small script which generate array of 5 random numbers ######## */
+
+console.log("13.Develop a small script which generate array of 5 random numbers")
+let randomNumbers = [];
+
+for (let i = 0; i < 5 ; i++){
+    randomNumbers += Math.floor(Math.random() * 10 );
+}
+console.log(randomNumbers);
+
+ /*######## 14. Develop a small script which generate array of 5 random numbers
+  and the numbers must be unique ########*/
+
+  console.log("14. Develop a small script which generate array of 5 random numbers and the numbers must be unique");
+
+  let randomUniqueNumbers = [];
+  let randNum = 0;
+
+  for(let i = 0; randomUniqueNumbers.length < 5 ; i++){
+      randNum = Math.floor(Math.random() * 10);
+
+      if(randomUniqueNumbers.indexOf(randNum) == -1){
+
+        randomUniqueNumbers.push(randNum);
+
+      }
+  }
+
+/*   while(randomUniqueNumbers.length <= 4){
+      randNum = Math.floor(Math.random() *10);
+
+      if(randomUniqueNumbers.indexOf(randNum) == -1){
+          randomUniqueNumbers.push(randNum);
+      }
+ */
+
+  console.log(randomUniqueNumbers);
+
+  /*######## 15. Develop a small script which generate a six characters random id: ########*/
+
+  console.log("15. Develop a small script which generate a six characters random id:");
+
+  let randChar;
+  let randString = "";
+  for (let i = 0; i < 6; i++){
+
+    randChar = (Math.trunc(Math.random() * 26)) + 97
+    randString += String.fromCharCode(randChar);
+
+  }
+  console.log(randString);
