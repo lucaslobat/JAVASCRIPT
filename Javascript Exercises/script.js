@@ -1,5 +1,83 @@
 // **********LOOP EXERCISES  **********
 //---EXERCISES LEVEL 1---
+/*######## -4. Iterate over an object using the for in loop ########*/
+
+console.log("-4. Iterate over an object using the for in loop");
+
+let myObject = {
+    a: 1,
+    b: 2,
+    c: 3
+}
+
+for (property in myObject){
+    console.log(`Key: ${property} Value:${myObject[property]}`);
+}
+
+
+/*######## -3. Iterate over an object,sum all its values and then do the average. ########*/
+console.log("-3.A) Iterate over an object sum all its values and then do the average.");
+const testScores = {
+    Kennen: 80,
+    Ahri: 50,
+    Pantheon: 99,
+    Taric: 100,
+    Gangplank: 80, 
+}
+
+let champions = Object.keys(testScores);
+let championScores = Object.values(testScores);
+
+for (let champion of champions){
+    console.log(champion);
+}
+
+let championScoresSum = 0;
+for( let championScore of championScores){
+    championScoresSum += championScore;
+}
+
+console.log(championScoresSum / champions.length);
+
+/*######## -2. Iterate over an array using for...of loop ########*/
+
+console.log("15.A) Iterate over an array using for...of loop");
+
+const studentNames = ["Mario","Pedro","Amanda","Julio"];
+
+for (let studentName of studentNames){
+    console.log(studentName);
+}
+
+/*######## -1. Iterate over an multidimensional array using for...of loops ########*/
+
+console.log("15.B) Iterate over an multidimensional array using for...of loops");
+
+const rowsAndColumns = [
+    ["Creed","Sayuri","Toguro"],
+    ["Pablo","Samara","Maira"],
+    ["Vivianne","Maria","Pilar"]
+]
+
+for (let row of rowsAndColumns){
+    for( let name of row){
+        console.log(name);
+    }
+}
+
+
+
+/*######## 0.C) Iterate over an array of numbers and do the 
+square of each number in the array using a for...of loop ########*/
+console.log("15.C) Iterate over an array of numbers and do the square of each number in the array using a for...of loop");
+const numbers = [1,2,3,4,5,6,7,8,9]; 
+
+let square = 0;
+for (number of numbers){
+    console.log(Math.pow(number,2));
+}
+
+
 
 const countries = [
     'Albania',
@@ -125,12 +203,14 @@ console.log("9. Use for loop to iterate from 0 to 100 and print only prime numbe
 
 
 let divisor;
+
 /* Empezamos iterando en un bucle para verificar si un numero es primo.
 Al iniciar el bucle inicializamos la variable divisor a 2 
 (excluyendo el 1 porque es obvio que un numero es divisible entre 1) */
-for (let numero = 0; numero <=100; numero++ ){
-    
+for (let numero = 0; numero <= 100; numero++ ){
+    // Al inicio del bucle se resetea el divisor a 2, que es el punto de partida de la iteraciçon.
     divisor = 2;
+
     /* Mientras el divisor sea menor que el numero, verificaremos si el numero es divisible entre el
     divisor, en caso de que lo sea acabaremos el bucle (el numero no es primo) 
     Se incrementa el divisor en cada iteración del bucle, al final de la ultima iteración, se le sigue sumando 1 al divisor*/
@@ -244,3 +324,5 @@ console.log(randomNumbers);
 
   }
   console.log(randString);
+
+
