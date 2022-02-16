@@ -1,4 +1,5 @@
-// **********LOOP EXERCISES  **********
+// ***********************LOOP EXERCISES  ***********************
+console.log("***********************LOOP EXERCISES  ***********************");
 //---EXERCISES LEVEL 1---
 /*######## -4. Iterate over an object using the for in loop ########*/
 
@@ -324,5 +325,168 @@ console.log(randomNumbers);
 
   }
   console.log(randString);
+
+/*######## Formula de Harris Bennedict ########*/
+
+/* let peso = 76;
+let altura = 1.74;
+let edad = 29;
+
+let tasaMetabolismoBasal = (10 * peso) + (6.25 * altura) - (5 * edad) + 5;
+let tasaMetabolismoBasalEjercicio = tasaMetabolismoBasal * 1.55;
+
+console.log(`Tasa de metabilismo basal: ${tasaMetabolismoBasal}. Con ejercicio moderado (3-5 días a la semana) : ${tasaMetabolismoBasalEjercicio}`);
+console.log(`20% de ${tasaMetabolismoBasalEjercicio} = ${(10 * tasaMetabolismoBasalEjercicio) / 100}`) */
+
+
+// ***********************FUNCTION EXERCISES  ***********************
+console.log("***********************FUNCTION EXERCISES  ***********************");
+
+
+/*######## -2. Develop a small function which can accept any number of arguments using an arrow function: ########*/
+console.log("-2. Develop a small script which can accept any number of arguments using an arrow function::");
+
+const arrowFunk = (...args) => {
+    console.log(args);
+
+}
+arrowFunk("hola","que","tal");
+
+
+
+
+/*######## -1. Develop a small function which can accept any number of arguments: ########*/
+console.log("-1. Develop a small script which can accept any number of arguments:");
+
+/* Una declaración de función provee un objeto de tipo array dentro del escopo
+de dicha función. Todo lo que pasemos como argumento puede accederse atraves del objeto "arguments"
+dentro de la función. */
+function argumentsObject(){
+    for (let i = 0; i <arguments.length;i++){
+        console.log(arguments[i]);
+    }
+}
+
+argumentsObject(1,2,"hola");
+
+
+/*######## 0. Write a function wich accepts a single array argument. The function
+should return the last element of the array. If the array is empty the function should return null. ########*/
+
+console.log("0. Write a function wich accepts a single array argument. The function should return the last element of the array. If the array is empty the function should return null.");
+function lastElement(arrayFunction){
+    if(arrayFunction.length == 0){
+        return null
+    } else {
+        let arrayLength = arrayFunction.length - 1;
+        return arrayFunction[arrayLength];
+    }
+
+}
+let result = lastElement([1,2,3,4,5]);
+console.log(result);
+
+/*######## 1. Define a function that accepts a string argument and returns
+a new string with only the first letter capitalized. ########*/
+console.log("1. Define a function that accepts a string argument and returns a new string with only the first letter capitalized.");
+function capitalize(str){
+    let capStr = str[0].toUpperCase();
+    let remainders = str.slice(1);
+
+    return capStr + remainders;
+}
+
+console.log(capitalize("lucas"));
+
+
+/*######## 2. Define a function wich accepts a single argument array of numbers.
+It should return the sum of all the numbers in the array ########*/
+console.log("2. Define a function wich accepts a single argument array of numbers. It should return the sum of all the numbers in the array");
+
+function sumArray(array){
+    let total = 0;
+    for (number of array){
+        total += number;
+    }
+    return total;
+}
+
+console.log(sumArray([1,2,2]));
+
+
+/*######## 3. Define a function wich takes one parameter (number from 1-7) amd returns
+the day of the week if the number is less than 1 or greater than 7, otherwise return null. ########*/
+console.log("2. Define a function wich accepts a single argument array of numbers. It should return the sum of all the numbers in the array");
+const weekDays = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+
+function returnDay (dayNumber){
+    if(dayNumber < 1 || dayNumber > 7){
+        return null
+    } else {
+        return weekDays[dayNumber - 1];
+    }
+}
+
+console.log(returnDay(7));
+
+/*######## 4. Declare a function fullName and it pront out your full name. ########*/
+console.log("4. Declare a function fullName and it pront out your full name.");
+function fullNameFunc(str){
+    console.log(str);
+}
+
+fullNameFunc("Lucas Lobato");
+
+/*######## 5. Declare a function fullName and now it takes firstName and lastName
+as a parameter and it return your full name. ########*/
+
+console.log("5. Declare a function fullName and now it takes firstName and lastName as a parameter and it return your full name.")
+
+function fullName(firstName,lastName){
+    return (`${firstName} ${lastName}`);
+}
+
+console.log(fullName("Lucas","Lobato"));
+
+/*######## 6. Declare a function addNumbers and it takes two two parameters and it returns sum. ########*/
+
+console.log("6. Declare a function addNumbers and it takes two two parameters and it returns sum.");
+
+function addNumbers(x,y){
+    return x + y;
+}
+
+console.log(addNumbers(5,5));
+
+/*######## 7. An area of a rectangle is calculated as follows: area = length x width. Write a function which calculates areaOfRectangle. ########*/
+console.log("7. An area of a rectangle is calculated as follows: area = length x width. Write a function which calculates areaOfRectangle.");
+
+function areaOfRectangle (length,width){
+    let area = length * width;
+    return area;
+}
+
+console.log(areaOfRectangle(10,5));
+
+/*######## 8. A perimeter of a rectangle is calculated as follows: perimeter= 2x(length + width). Write a function which calculates perimeterOfRectangle. ########*/
+console.log("8. A perimeter of a rectangle is calculated as follows: perimeter= 2x(length + width). Write a function which calculates perimeterOfRectangle.");
+
+function perimeterOfRectangle(length,width){
+    let perimeter = (length + width) * 2;
+    return perimeter;
+}
+console.log(perimeterOfRectangle(10,20));
+
+/*######## 9. A volume of a rectangular prism is calculated as follows: volume = length x width x height. Write a function which calculates volumeOfRectPrism. ########*/
+console.log("9. A volume of a rectangular prism is calculated as follows: volume = length x width x height. Write a function which calculates volumeOfRectPrism.");
+
+function volumeOfRectPrism(length,width,height){
+        let volume = length * width * height;
+        return volume;
+}
+
+console.log(volumeOfRectPrism(10,100,5));
+
+/*######## 10. Area of a circle is calculated as follows: area = π x r x r. Write a function which calculates areaOfCircle. ########*/
 
 
