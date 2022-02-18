@@ -488,5 +488,122 @@ function volumeOfRectPrism(length,width,height){
 console.log(volumeOfRectPrism(10,100,5));
 
 /*######## 10. Area of a circle is calculated as follows: area = π x r x r. Write a function which calculates areaOfCircle. ########*/
+console.log("10. Area of a circle is calculated as follows: area = π x r x r. Write a function which calculates areaOfCircle.");
+
+function areaOfCircle (radius){
+    return Math.PI * ( radius * radius); 
+}
+
+console.log(areaOfCircle(19).toFixed(5));
 
 
+/* ######## 11. Circumference of a circle is calculated as follows: circumference = 2πr. Write a function which calculates circumOfCircle. ######## */
+console.log("11. Circumference of a circle is calculated as follows: circumference = 2πr. Write a function which calculates circumOfCircle.");
+
+function circumOfCircle (radius) {
+    return 2 * (Math.PI * radius);
+}
+
+console.log(circumOfCircle(2).toFixed(5));
+
+/* ######## 12. Circumference of a circle is calculated as follows: circumference = 2πr. Write a function which calculates circumOfCircle. ######## */
+console.log("12. Circumference of a circle is calculated as follows: circumference = 2πr. Write a function which calculates circumOfCircle.");
+
+function density(mass,volume){
+    return mass/volume;
+}
+
+console.log(density(19,7).toFixed(5));
+
+/* ######## 13. Speed is calculated by dividing the total distance covered by a moving object divided by the total amount of time taken. Write a function which calculates a speed of a moving object, speed. ######## */
+console.log("13. Speed is calculated by dividing the total distance covered by a moving object divided by the total amount of time taken. Write a function which calculates a speed of a moving object, speed.");
+
+function speed (distance,time){
+
+    return distance / time;
+}
+
+console.log(speed(10,20));
+
+/* ######## 14. Weight of a substance is calculated as follows: weight = mass x gravity. Write a function which calculates weight. ######## */
+console.log("14. Weight of a substance is calculated as follows: weight = mass x gravity. Write a function which calculates weight.");
+
+function weight(mass,gravity){
+    return mass * gravity;
+}
+
+console.log(weight(19,299792458));
+
+/* ######## 15. Temperature in oC can be converted to oF using this formula: oF = (oC x 9/5) + 32. Write a function which convert oC to oF convertCelciusToFahrenheit. ######## */
+console.log("15 . Temperature in oC can be converted to oF using this formula: oF = (oC x 9/5) + 32. Write a function which convert oC to oF convertCelciusToFahrenheit.");
+
+function convertCelciustoFahrenheit(oCTemperature){
+    let temperatureInFahrenheit;
+
+    return temperatureInFahrenheit = oCTemperature * (9 / 5) + 32;
+}
+
+console.log(convertCelciustoFahrenheit(15));
+
+/* ######## 16. Body mass index(BMI) is calculated as follows: bmi = weight in Kg / (height x height) in m2. Write a function which calculates bmi. BMI is used to broadly define different weight groups in adults 20 years old or older.Check if a person is underweight, normal, overweight or obese based the information given below. ######## */
+console.log("16 . Body mass index(BMI) is calculated as follows: bmi = weight in Kg / (height x height) in m2. Write a function which calculates bmi. BMI is used to broadly define different weight groups in adults 20 years old or older.Check if a person is underweight, normal, overweight or obese based the information given below.");
+
+function bodyMassCalculator(weight,height){
+    bodyMass = Math.floor(weight / Math.pow(height,2));
+
+    let message = ""
+
+    if (bodyMass < 18.5){
+        message = "You are underweight";
+    } else if(bodyMass >= 18.5 && bodyMass <= 24.9){
+       message = "You are in a normal weight";
+    } else if(bodyMass >= 25 && bodyMass <= 29.9){
+        message = "You are overweight";
+    } else {
+        message = "You are obese.";
+    }
+
+    return console.log(`Your BMI is ${bodyMass}. ${message}`);
+
+}
+
+bodyMassCalculator(76,1.74);
+
+/* ######## 17. Write a function called checkSeason, it takes a month parameter and returns the season:Autumn, Winter, Spring or Summer. ######## */
+console.log("17. Write a function called checkSeason, it takes a month parameter and returns the season:Autumn, Winter, Spring or Summer.");
+
+function checkSeason(month){7
+    let seasonVariable = "";
+    if(month === "December" || month === "January" || month === "February"){
+        seasonVariable = "It is Winter";
+    } else if(month === "March" || month === "April" || month === "May"){
+        seasonVariable ="It is Spring";
+    } else if(month === "June" || month === "July" || month === "August"){
+        seasonVariable = "It is Summer";
+    } else if(month === "September" || month === "October" || month === "November"){
+        seasonVariable = "It is Autumn";
+    } else {
+        console.log("Please enter a valid month.");
+    }
+
+    return seasonVariable;
+}
+
+console.log(checkSeason("June"));
+
+/* ######## 18. Math.max returns its largest argument. Write a function findMax that takes three arguments and returns their maximum with out using Math.max method. ######## */
+console.log("18. Math.max returns its largest argument. Write a function findMax that takes three arguments and returns their maximum with out using Math.max method.");
+
+function largestNumber(x,y,z){
+    let largestNumberMatrix = [x,y,z];
+    let maxNum = 0;
+
+    for(let i = 0; i < largestNumberMatrix.length; i++){
+        if(largestNumberMatrix[i] > maxNum){
+            maxNum = largestNumberMatrix[i];
+        }
+    }
+    return maxNum;
+}
+
+console.log(largestNumber(10,-10,20));
