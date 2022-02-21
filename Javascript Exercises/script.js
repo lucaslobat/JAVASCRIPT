@@ -606,4 +606,15 @@ function largestNumber(x,y,z){
     return maxNum;
 }
 
-console.log(largestNumber(10,-10,20));
+console.log(largestNumber(1,10,2));
+
+/* ######## 19. Declare a function name printArray. It takes array as a parameter and it prints out each value of the array. ######## */
+console.log("19. Declare a function name printArray. It takes array as a parameter and it prints out each value of the array.");
+
+function printArray (arrayInput){
+    for(let i = 0; i < arrayInput.length; i++){
+        console.log(arrayInput[i]);
+    }
+}
+
+printArray([2,10,19,22]);
