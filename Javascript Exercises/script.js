@@ -1,6 +1,5 @@
 // ***********************LOOP EXERCISES  ***********************
 console.log("***********************LOOP EXERCISES  ***********************");
-//---EXERCISES LEVEL 1---
 /*######## -4. Iterate over an object using the for in loop ########*/
 
 console.log("-4. Iterate over an object using the for in loop");
@@ -618,3 +617,128 @@ function printArray (arrayInput){
 }
 
 printArray([2,10,19,22]);
+
+
+/* ######## 20. Write a function name showDateTime which shows time in this format: 08/01/2020 04:08 using the Date object. ######## */
+console.log("20. Write a function name showDateTime which shows time in this format: 08/01/2020 04:08 using the Date object.");
+
+function showDateTime(){
+    let date = new Date();
+    return console.log(date.toLocaleDateString('es-ES') + " " + date.toLocaleTimeString('es-ES'));
+}
+
+showDateTime();
+
+/* HIGHER ORDER FUNCTIONS */
+
+/* ######## 21. Declare an object that stores a method, the method should use any of the object's
+properties using the keyword 'this. ######## */
+
+console.log('21. Declare an object that stores a method, the method should use any of the object\'s properties using the keyword \'this.')
+
+const instructor = {
+    firstName:'Tim',
+    info: {
+        catOwner:true,
+        boatOwner:true
+    },
+    displayInfo: function(){
+        console.log(`First name: ${this.firstName}.`);
+    }
+}
+
+instructor.displayInfo();
+
+
+console.log("*********************** HIGH ORDER FUNCTIONS ***********************");
+/*  They are functions that take another function as parameter or return a function.
+    A function that is passed as argument is a Callback */
+
+const countriesArray = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand']
+const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook']
+const numbersArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const products = [
+  { product: 'banana', price: 3 },
+  { product: 'mango', price: 6 },
+  { product: 'potato', price: '' },
+  { product: 'avocado', price: 8 },
+  { product: 'coffee', price: 10 },
+  { product: 'tea', price: '' },
+]
+
+
+/* ######## 1.Explain the difference between forEach, map, filter, and reduce. ######## */
+console.log("1.Explain the difference between forEach, map, filter, and reduce. ");
+
+console.log(`forEach(): Ejecuta la función indicada una vez por cada elemento del array.
+Se puede acceder tanto al elemento en si como su index. ej: forEach((elemento,index) => {})
+
+map(): Crea un nuevo array con los resultados del callback a cada uno de sus elementos. Se puede
+acceder tanto al elemento en si como su index. ej array.map((elemento,index) => {}));
+
+
+`);
+
+
+/* ######## 2.Use forEach to console.log each country in the countries array. ######## */
+console.log("2.Use forEach to console.log each country in the countries array.");
+
+countriesArray.forEach((element,i) => {
+    console.log(`${i} : ${element}`);
+})
+
+/* ######## 3.Use forEach to console.log each name in the names array. ######## */
+    console.log("3.Use forEach to console.log each country in the countries array.");
+
+    names.forEach((nameElement) =>{
+        console.log(nameElement);
+    })
+
+/* ######## 4.Use forEach to console.log each number in the numbers array. ######## */
+    console.log("4.Use forEach to console.log each number in the numbers array.");
+
+    numbersArray.forEach((numberElement) => {
+        console.log(numberElement);
+    })
+
+/* ######## 5.Use map to create a new array by changing each country to uppercase in the countries array. ######## */
+    console.log("5.Use map to create a new array by changing each country to uppercase in the countries array.");
+
+    let countriesUpperCased = countriesArray.map((element)=>{
+        return element.toUpperCase();
+    })
+
+    console.log(countriesUpperCased);
+
+/* ######## 6.Use map to create an array of countries length from countries array. ######## */
+    console.log("6.Use map to create an array of countries length from countries array.");
+
+    let countriesLength = countriesArray.map((country) => {
+        return country.length;
+    })
+
+console.log(countriesLength);
+
+/* ######## 7.Use map to create a new array by changing each number to square in the numbers array. ######## */
+console.log("7.Use map to create a new array by changing each number to square in the numbers array.");
+
+    let numbersSquare = numbersArray.map((number) => {
+        return number * number;
+    })
+
+    console.log(numbersSquare);
+/* ######## 8.Use map to change to each name to uppercase in the names array. ######## */
+console.log("8.Use map to change to each name to uppercase in the names array.");
+    let namesUpperCased = names.map((name) => {
+        return name.toUpperCase();
+    })
+
+    console.log(namesUpperCased);
+
+/* ######## 9.Use map to map the products array to its corresponding prices.. ######## */
+console.log("9.Use map to map the products array to its corresponding prices.");
+    let productPrices = products.map((product) => {
+        return product.price;
+    })
+
+    console.log(productPrices);
