@@ -742,3 +742,24 @@ console.log("9.Use map to map the products array to its corresponding prices.");
     })
 
     console.log(productPrices);
+
+/* ######## 10.Write a function called validUserNames that accepts 
+an array of usernames. It should return a new array containing 
+only the usernames that are less than 10 characters ######## */
+console.log("10.Write a function called validUserNames that accepts an array of usernames. It should return a new array containing only the usernames that are less than 10 characters.");
+
+function validUserNames (usersArray){
+    
+    let filteredArray = usersArray.filter(user => (user.length < 10));
+    return filteredArray;
+}
+
+let usernamesArray = ['mark','staceysmom1978','q122873872382','carrie98','MoanaFan'];
+
+console.log(validUserNames(usernamesArray));
+
+/* ######## 11.Use filter to filter out countries containing land. ######## */
+console.log("11.Use filter to filter out countries containing land.");
+
+console.log(countriesArray.filter(country => country.match(/land/gi)));
+
