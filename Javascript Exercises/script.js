@@ -763,3 +763,9 @@ console.log("11.Use filter to filter out countries containing land.");
 
 console.log(countriesArray.filter(country => country.match(/land/gi)));
 
+/* ######## 12.Use filter to filter out countries having six character. ######## */
+console.log("12.Use filter to filter out countries having six character.");
+
+console.log(countriesArray.filter((country) => {
+    return country.length === 6;
+}))
