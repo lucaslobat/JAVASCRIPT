@@ -848,9 +848,59 @@ It executes the callback function for every element in the array until it finds 
 every(): Check if all of the elements in a array satisfies a condition declares in a callback.
 It executes the callback function for every element in the array until it finds an element that returns false`);
 
+/* ######## 20.Use some to check if some names' length greater than seven in names array ######## */
+console.log("20.Use some to check if some names' length greater than seven in names array.");
 
-/* ######## 20.Use the spread operator on a function call. ######## */
-console.log("20.Use the spread operator on a function call.");
+console.log(names.some((name )=> {
+    return name.length > 7;
+}));
+
+/* ######## 21.Use every to check if all the countries contain the word land ######## */
+console.log("21.Use every to check if all the countries contain the word land.");
+
+console.log(countriesArray.every((country) => {
+    return country.match(/land/gi);
+}));
+
+
+/* ######## 22.Explain the difference between find and findIndex. ######## */
+console.log("22. Explain the difference between find and findIndex.");
+console.log(`find(): Its an array method that returns the valor of the first array's element that satisfies a 
+condition passed through a callback.
+findIndex():Its an array method that returns the index of the first array's element that satisfies a 
+condition passed through a callback.
+`);
+
+
+/* ######## 23.Use find to find the first country containing only six letters in the countries array. ######## */
+console.log("23.Use find to find the first country containing only six letters in the countries array.");
+console.log(countriesArray.find((country)=> {
+    return country.length === 6;
+}));
+
+/* ######## 24.Use findIndex to find the position of the first country containing only six letters in the countries array. ######## */
+console.log("24.Use findIndex to find the position of the first country containing only six letters in the countries array.");
+
+console.log(countriesArray.findIndex((country) => {
+    return country.length === 6;
+}));
+
+/* ######## 25.Use findIndex to find the position of Norway if it doesn't exist in the array you will get -1. ######## */
+console.log("25.Use findIndex to find the position of Norway if it doesn't exist in the array you will get -1.");
+
+console.log(countriesArray.findIndex((country) => {
+    return country === 'Norway';
+}));
+
+/* ######## 26.Use findIndex to find the position of Russia if it doesn't exist in the array you will get -1. ######## */
+console.log("26.Use findIndex to find the position of Russia if it doesn't exist in the array you will get -1.");
+
+console.log(countriesArray.findIndex((country) => {
+    return country === 'Russia';
+}));
+
+/* ######## 27.Use the spread operator on a function call. ######## */
+console.log("27.Use the spread operator on a function call.");
 let spreadArray = [1,2,3,4,5,6];
 
 //función con argumentos rest
@@ -863,15 +913,15 @@ console.log(spreadElements(...spreadArray,...[7,8,9,10]));
 
 
 
-/* ######## 21.Use the spread operator on array. ######## */
-console.log("21.Use the spread operator on array.");
+/* ######## 28.Use the spread operator on array. ######## */
+console.log("28.Use the spread operator on array.");
 const arrayToSpread = ['a','b','c','d'];
 
 let spreadedArray = [...arrayToSpread,'d','e','f'];
 console.log(spreadedArray);
 
-/* ######## 22.Use the spread operator on an object. ######## */
-console.log("22.Use the spread operator on an object.");
+/* #######29.Use the spread operator on an object. ######## */
+console.log("29.Use the spread operator on an object.");
 
 const objToSpread = {
     name: 'Lucas',
@@ -882,8 +932,8 @@ const objToSpread = {
 let spreadedObj = {...objToSpread,hobbies:['Programming','Gym']};
 console.log(spreadedObj);
 
-/* ######## 23.Use the spread operator on string. ######## */
-console.log("23.Use the spread operator on string.");
+/* ######## 30.Use the spread operator on string. ######## */
+console.log("30.Use the spread operator on string.");
 const spreadStringArray = {...'hello'};
 
 console.log(spreadStringArray);
