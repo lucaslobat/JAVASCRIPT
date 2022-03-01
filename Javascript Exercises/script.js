@@ -654,9 +654,9 @@ console.log("*********************** HIGH ORDER FUNCTIONS **********************
 /*  They are functions that take another function as parameter or return a function.
     A function that is passed as argument is a Callback */
 
-const countriesArray = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand']
-const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook']
-const numbersArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const countriesArray = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand','Ethiopia','Egypt','Ecuador'];
+const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook'];
+const numbersArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const products = [
   { product: 'banana', price: 3 },
   { product: 'mango', price: 6 },
@@ -664,7 +664,7 @@ const products = [
   { product: 'avocado', price: 8 },
   { product: 'coffee', price: 10 },
   { product: 'tea', price: '' },
-]
+];
 
 
 /* ######## 1.Explain the difference between forEach, map, filter, and reduce. ######## */
@@ -769,3 +769,121 @@ console.log("12.Use filter to filter out countries having six character.");
 console.log(countriesArray.filter((country) => {
     return country.length === 6;
 }))
+
+/* let arrayReduce = [];
+let reduceLet = [0,1,2,3,4].reduce((valorAnterior,valorActual,indice)=> {
+    arrayReduce.push(`Indice: ${indice} | Valor anterior: ${valorAnterior} |
+     Valor actual: ${valorActual} | Resultado: ${valorAnterior + valorActual}`);
+    return valorAnterior + valorActual;
+});
+
+console.log(reduceLet);
+console.log(arrayReduce); */
+
+/* ######## 13.Use filter to filter out countries containing six letters and more in the country array. ######## */
+console.log("13.Use filter to filter out countries containing six letters and more in the country array.");
+
+console.log(countriesArray.filter((country) => {
+    return country.length >= 6;
+}));
+
+/* ######## 14.Use filter to filter out country start with 'E'. ######## */
+console.log("14.Use filter to filter out country start with 'E';");
+console.log(countriesArray.filter((country) => {
+    return country[0] === 'E';
+}));
+
+/* ######## 15.Use filter to filter out only prices with values. ######## */
+console.log("15.Use filter to filter out only prices with values.");
+
+console.log(products.filter((product) => {
+    return Boolean(product.price);
+}));
+
+/* ######## 16.Declare a function called getStringLists which takes an array as a parameter and then returns an array only with string items.. ######## */
+console.log("16.Declare a function called getStringLists which takes an array as a parameter and then returns an array only with string items..");
+
+// Declaración de la variables
+let variedArray = [1,'hola',2,'que',3,'tal'];
+
+// Declaración de la función callback a ser pasada a la HoF 'filter()'.
+function getStringLists (element) {
+    return typeof(element) === 'string';
+}
+
+// Pasamos como parámetro la función getStringLists a filter() y el resultado lo guardamos en una variable.
+let stringElements = variedArray.filter(getStringLists);
+
+
+console.log(stringElements);
+
+/* ######## 17.Use reduce to sum all the numbers in the numbers array. ######## */
+console.log("17.Use reduce to sum all the numbers in the numbers array.");
+
+console.log(numbersArray.reduce((valAnterior,valActual) => {
+    return valAnterior + valActual;
+}));
+
+/* ######## 18.Use reduce to concatenate all the countries and to produce this sentence: Estonia, Finland, Sweden, Denmark, Norway, and IceLand are north European countries. ######## */
+console.log("18.Use reduce to concatenate all the countries and to produce this sentence: Finland, Sweden, Denmark, Norway, and IceLand...are are all nice countries.");
+
+
+let message = countriesArray.reduce((valAnterior,valActual)=> {
+
+    let concatString = '';
+    concatString += `${valAnterior},${valActual}`;
+
+    return concatString;
+
+
+});
+
+console.log(`${message} are all nice countries.`);
+
+/* ######## 19.Explain the difference between some and every. ######## */
+console.log("19.Explain the difference between some and every.");
+
+console.log(`some(): Check if at least one array's ocurrency satisfies the condition declares in the callback function.
+It executes the callback function for every element in the array until it finds an element that returns true.
+every(): Check if all of the elements in a array satisfies a condition declares in a callback.
+It executes the callback function for every element in the array until it finds an element that returns false`);
+
+
+/* ######## 20.Use the spread operator on a function call. ######## */
+console.log("20.Use the spread operator on a function call.");
+let spreadArray = [1,2,3,4,5,6];
+
+//función con argumentos rest
+function spreadElements (...args){
+    return args;
+}
+
+// operador spread en la llamada de la función
+console.log(spreadElements(...spreadArray,...[7,8,9,10]));
+
+
+
+/* ######## 21.Use the spread operator on array. ######## */
+console.log("21.Use the spread operator on array.");
+const arrayToSpread = ['a','b','c','d'];
+
+let spreadedArray = [...arrayToSpread,'d','e','f'];
+console.log(spreadedArray);
+
+/* ######## 22.Use the spread operator on an object. ######## */
+console.log("22.Use the spread operator on an object.");
+
+const objToSpread = {
+    name: 'Lucas',
+    age: '29',
+    nationality: ['Brazilan','Spanish'],
+}
+
+let spreadedObj = {...objToSpread,hobbies:['Programming','Gym']};
+console.log(spreadedObj);
+
+/* ######## 23.Use the spread operator on string. ######## */
+console.log("23.Use the spread operator on string.");
+const spreadStringArray = {...'hello'};
+
+console.log(spreadStringArray);
