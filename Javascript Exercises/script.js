@@ -899,41 +899,115 @@ console.log(countriesArray.findIndex((country) => {
     return country === 'Russia';
 }));
 
-/* ######## 27.Use the spread operator on a function call. ######## */
-console.log("27.Use the spread operator on a function call.");
-let spreadArray = [1,2,3,4,5,6];
+// *********************** DESTRUCTURING;REST AND SPREAD EXERCISES  ***********************
+console.log("*********************** DESTRUCTURING;REST AND SPREAD EXERCISES ***********************");
 
-//función con argumentos rest
-function spreadElements (...args){
-    return args;
+const constants = [2.72, 3.14, 9.81, 37, 100];
+
+const rectangle = {
+  width: 20,
+  height: 10,
+  area: 200,
+  perimeter: 60
 }
 
-// operador spread en la llamada de la función
-console.log(spreadElements(...spreadArray,...[7,8,9,10]));
+const users = [
+{
+  name:'Brook',
+  scores:75,
+  skills:['HTM', 'CSS', 'JS'],
+  age:16
+},
+{
+  name:'Alex',
+  scores:80,
+  skills:['HTM', 'CSS', 'JS'],
+  age:18
+},
+{
+  name:'David',
+  scores:75,
+  skills:['HTM', 'CSS'],
+  age:22
+},
+{
+  name:'John',
+  scores:85,
+  skills:['HTML'],
+  age:25
+},
+{
+  name:'Sara',
+  scores:95,
+  skills:['HTM', 'CSS', 'JS'],
+  age: 26
+},
+{
+  name:'Martha',
+  scores:80,
+  skills:['HTM', 'CSS', 'JS'],
+  age:18
+},
+{
+  name:'Thomas',
+  scores:90,
+  skills:['HTM', 'CSS', 'JS'],
+  age:20
+}
+]
+
+/* ######## 1.Destructure and assign the elements of constants array to e, pi, gravity, humanBodyTemp, waterBoilingTemp.. ######## */
+console.log("1.Destructure and assign the elements of constants array to e, pi, gravity, humanBodyTemp, waterBoilingTemp..");
+
+const [e,pi,gravity,humanBodyTemp,waterBoilingTemp] = constants;
+console.log(e,pi,gravity,humanBodyTemp,waterBoilingTemp);
+
+/* ######## 2.Destructure and assign the elements of countries array to fin, est, sw, den, nor ######## */
+console.log("2.Destructure and assign the elements of countries array to fin, est, sw, den, nor");
+
+const [fin,sw,den,nor] = countriesArray;
+console.log(fin,sw,den,nor);
+
+/* ######## 3.Destructure the rectangle object by its properties or keys. ######## */
+console.log("3.Destructure the rectangle object by its properties or keys.");
 
 
 
-/* ######## 28.Use the spread operator on array. ######## */
-console.log("28.Use the spread operator on array.");
-const arrayToSpread = ['a','b','c','d'];
 
-let spreadedArray = [...arrayToSpread,'d','e','f'];
-console.log(spreadedArray);
+/* ######## .Use the spread operator on a function call. ######## */
+console.log(".Use the spread operator on a function call.");
 
-/* #######29.Use the spread operator on an object. ######## */
-console.log("29.Use the spread operator on an object.");
+const arrayToSpread = [1,1,1,1,1];
 
-const objToSpread = {
-    name: 'Lucas',
-    age: '29',
-    nationality: ['Brazilan','Spanish'],
+function spreadOperator(...args){
+     return args.reduce((valAnterior,valActual) => {
+        return valAnterior + valActual;
+    }) 
 }
 
-let spreadedObj = {...objToSpread,hobbies:['Programming','Gym']};
-console.log(spreadedObj);
+console.log(spreadOperator(...arrayToSpread));
 
-/* ######## 30.Use the spread operator on string. ######## */
-console.log("30.Use the spread operator on string.");
-const spreadStringArray = {...'hello'};
+/* ######## .Use the spread operator on array. ######## */
+console.log(".Use the spread operator on array.");
 
-console.log(spreadStringArray);
+const arrayToSpread2 =  ['Web Development','Gym','Drawing'];
+
+const arrayContainer = [1,2,3,...arrayToSpread2];
+
+console.log(arrayContainer);
+
+/* #######.Use the spread operator on an object. ######## */
+console.log(".Use the spread operator on an object.");
+
+const objectContainer = {
+    nombre : 'Lucas',
+    nationality: 'Brazilian / Spanish',
+    hobbies: [...arrayToSpread2]}
+
+console.log(objectContainer);
+
+
+/* ######## .Use the spread operator on string. ######## */
+console.log(".Use the spread operator on string.");
+
+console.log(..."SPREAD OPERATOR");
