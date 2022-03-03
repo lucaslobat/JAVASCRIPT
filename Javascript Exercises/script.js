@@ -956,6 +956,32 @@ const users = [
 }
 ]
 
+const countriesObj = [{
+    name: 'Germany',
+    capital: 'Berlin',
+    population: 83.000000,
+    language: 'German'
+},
+{
+    name: 'France',
+    capital: 'Paris',
+    population: 67.000000,
+    language: 'French'
+},
+{
+    name: 'Italy',
+    capital: 'Roma',
+    population: 59.000000,
+    language: 'Italian'
+},
+{
+    name: 'Spain',
+    capital: 'Madrid',
+    population: 47.000000,
+    language: 'Spanish'
+}
+]
+
 /* ######## 1.Destructure and assign the elements of constants array to e, pi, gravity, humanBodyTemp, waterBoilingTemp.. ######## */
 console.log("1.Destructure and assign the elements of constants array to e, pi, gravity, humanBodyTemp, waterBoilingTemp..");
 
@@ -970,6 +996,41 @@ console.log(fin,sw,den,nor);
 
 /* ######## 3.Destructure the rectangle object by its properties or keys. ######## */
 console.log("3.Destructure the rectangle object by its properties or keys.");
+
+const {width,height,area,perimeter} = rectangle;
+
+console.log(`Width: ${width} Height:${height} Area: ${area} Perimeter:${perimeter}`);
+
+/* ######## 4.Iterate through the users array and get all the keys of the object using destructuring. ######## */
+console.log("4.Iterate through the users array and get all the keys of the object using destructuring.");
+
+users.map(({name,scores,skills,age}) => {
+    console.log(name,scores,skills,age);
+});
+
+/* ######## 5.Find the persons who have less than two skills. ######## */
+console.log("5.Find the persons who have less than two skills.");
+const userSkills = users.filter((person) => {
+    return person.skills.length < 2;
+});
+
+console.log(...userSkills);
+
+
+/* ######## 6.Destructure the countries object print name, capital, population and languages of all countries. ######## */
+console.log("6.Destructure the countries object print name, capital, population and languages of all countries.");
+
+countriesObj.forEach((country) => {
+    const {name,capital,population,language} = country;
+    console.log(name,capital,population,language);
+})
+
+
+
+
+
+
+
 
 
 
@@ -1011,3 +1072,5 @@ console.log(objectContainer);
 console.log(".Use the spread operator on string.");
 
 console.log(..."SPREAD OPERATOR");
+
+
