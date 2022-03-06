@@ -1020,11 +1020,44 @@ console.log(...userSkills);
 /* ######## 6.Destructure the countries object print name, capital, population and languages of all countries. ######## */
 console.log("6.Destructure the countries object print name, capital, population and languages of all countries.");
 
-countriesObj.forEach((country) => {
-    const {name,capital,population,language} = country;
+countriesObj.forEach(({name,capital,population,language}) => {
     console.log(name,capital,population,language);
-})
+});
 
+/* ######## 7.Destructure the following array name to name, skills array to skills, scores array to scores, JavaScript score to jsScore and React score to reactScore variable in one line. ######## */
+console.log("7.Destructure the following array name to name, skills array to skills, scores array to scores, JavaScript score to jsScore and React score to reactScore variable in one line.");
+const student = ['David', ['HTM', 'CSS', 'JS', 'React'], [98, 85, 90, 95]];
+
+let [nombre,skills,scores,jsScore = scores[2],reactScore = scores[3]] = student;
+
+console.log(`${nombre} tiene las habilidades ${skills}, Su puntuación en JS es ${jsScore}.
+Su puntuación en React es ${reactScore}`);
+
+/* ######## 8.Write a function called convertArrayToObject which can convert the following arrays to a structure object. ######## */
+console.log("8.Write a function called convertArrayToObject which can convert the following arrays to a structure object.");
+let students = [
+    ['David', ['HTM', 'CSS', 'JS', 'React'], [98, 85, 90, 95]],
+    ['John', ['HTM', 'CSS', 'JS', 'React'], [85, 80, 85, 80]]
+  ];
+
+function convertArrayToObject (arrayOfArrays){
+    let arrayStudents = [];
+
+    for([nombre,skills,scores] of arrayOfArrays){
+
+        let studentObject = {
+            name: nombre,
+            skills:skills,
+            scores: scores,
+        }
+
+        arrayStudents.push(studentObject);
+    }
+
+    return arrayStudents;
+}
+
+console.log(convertArrayToObject(students));
 
 
 
@@ -1074,3 +1107,14 @@ console.log(".Use the spread operator on string.");
 console.log(..."SPREAD OPERATOR");
 
 
+const paisesEuropa = ['Alemania','Francia','Italia','España','Portugal','Países Bajos'];
+
+const [de,fr,...restoPaises] = paisesEuropa;
+
+console.log(de,fr,restoPaises);
+
+const miArreglo = ['a','b','c'];
+
+[elemento1,elemento2] = miArreglo;
+
+console.log(elemento1,elemento2);
