@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="styles.css">
+    <title>Browser & DOM Manipulation</title>
+</head>
+<body>
+    <main class="main__container">
+        <h1>Recorriendo Parent/Child/Sibling</h1>
+
+        <article>
+            <h2>Node.parentElement</h2>
+            <div>
+                <p>La propiedad de solo lectura <code>parentElement</code> de la interfaz <code>Node</code>, retorna el <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Elemento</a></code> padre  de un nodo, o <code>null</code> si el nodo no tiene padre, o si el padre no es un <code><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Elemento</a></code>. 
+                </p>
+            </div>
+            <h2>Element.children</h2>
+            <div>
+                <p>La propiedad de solo lectura <code>children</code> retorna una <code><a>HTMLCollection</a></code>, la cual contiene
+                todos los elementos hijos del <code><a>Element</a></code> sobre el cual esta ha sido llamada.</p>
+            </div>
+            <h2>Element.nextElementSibling / Element.previousSibling</h2>
+            <div>
+                <p>La propiedad de solo lectura <code>Element.nextElementSibling</code> / <code>Element.previousElementSibling</code>retorna el nodo precedente/antecedente
+                al nodo especificado en la lista de hijos del padre, o retorna <code>null</code> si el elemento especificado es el último hijo del elemento padre</p>
+            </div>  
+        </article>
+
+        <h1>Append & AppendChild</h1>
+        <article>
+            <h2>Document.creatElement()</h2>
+            <div>
+                <p>En un documento HTML, el método document.createElement() crea un elemento HTML con el nombre de 
+                    etiqueta especificado, o una <code>HTMLUnknownElement</code> si el nombre de la etiqueta no es
+                    reconocido
+                </p>
+            </div>
+            <h2>Element.append</h2>
+            <div>
+                <p>El método <code>Element.append()</code> inserta un conjunto de objetos <code>Node</code> u objetos<code>DOMString</code> después del último <code>Elemento</code> hijo.</p>
+            </div>
+        </article>
+
+    </main>
+    
+</body>
+<script src="./script.js"></script>
+</html>
