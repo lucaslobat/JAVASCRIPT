@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="styles.css">
+    <title>DOM Events</title>
+</head>
+<body>
+    <main class="main__container">
+        <div>
+            <!-- DOM EVENTS SECTION -->
+            <h1>DOM Events</h1>
+             <p>Un evento es una acción se dispara en respuesta de una interacción del usuario
+                como hacer click en el ratón,presionar una tecla o pueden ser generadas por API's para representar
+                el progreso de una tarea asíncrona. También puede ser disparado un evento al llamar el método HTMLElement.click(),
+                o definiendo el evento para luego mandarlo a un objetivo usando EventTarget.dispatchEvent().
+            </p>
+            <button onclick="alert('hola')">Click!</button>
+            <button id="v2">Click!</button>
+            <button id="v3">Click me and change my parents color!</button>
+            <input type="text" name="" id="">
+            <!-- END OF DOM EVENTS SECTION -->
+
+            <!--FORM EVENTS SECTION -->
+            <h1>Form Events & PreventDefault</h1>
+            
+            <form action="">
+                <label for="name">Input your name: </label><input type="text" id="name">
+                <label for="name">Input tweet:</label><input type="text" id="tweet">
+                <br>
+                <button>Submit</button>
+            </form>
+
+            <h2>List of Names</h2>
+            <ul id ="tweetsList">
+            </ul>
+            <!-- END OF FORM EVENTS SECTION -->
+        </div>
+    </main>    
+</body>
+<script src="./script.js"></script>
+</html>
