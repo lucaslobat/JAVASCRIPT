@@ -219,6 +219,8 @@ function Person(name,age,birthDate,isAlive,language){
 const persona = new Person('Firmino','20','12/01/1998',false,'English');
 console.log(persona);
 persona.speaksLanguage();
+
+
 errthanAllright = true;
 
 const objetoPromesa = new Promise ((resolve,reject) => {
@@ -228,6 +230,7 @@ const objetoPromesa = new Promise ((resolve,reject) => {
         }
         reject('La promesa ha fracasado');   
 });
+console.log(objetoPromesa);
 
 // Then solo se ejecutará si resolve es llamado.
 objetoPromesa
